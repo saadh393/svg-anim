@@ -68,49 +68,90 @@
         ease: "power1.inOut",
       });
 
-      gsap.to("#mail1", {
-        duration: 5,
-        yoyo: true,
-        ease: "power1.inOut",
-        repeat: -1,
-        motionPath: {
-          path: "#path1",
-          align: "#path1",
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-          type: "cubic",
-        },
-      });
+      gsap.set(["#mail1", "#mail2", "#mail3", "#mail4"], { opacity: 0 });
 
-      gsap.to("#mail2", {
-        duration: 6,
-        motionPath: {
-          path: "#path2",
-          align: "#path2",
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-        },
-      });
+      function fly(target, path, delay) {
+        gsap.to(target, {
+          duration: 5,
+          yoyo: true,
+          ease: "power1.inOut",
+          repeat: -1,
+          opacity: 1,
+          repeatDelay: delay,
+          motionPath: {
+            path: path,
+            align: path,
+            autoRotate: true,
+            alignOrigin: [0.5, 0.5],
+            type: "cubic",
+          },
+        });
+      }
 
-      gsap.to("#mail3", {
-        duration: 6,
-        motionPath: {
-          path: "#path3",
-          align: "#path3",
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-        },
-      });
+      fly("#mail1", "#path1", 1);
+      fly("#mail2", "#path2", 2);
+      fly("#mail3", "#path3", 3);
+      fly("#mail4", "#path4", 4);
 
-      gsap.to("#mail4", {
-        duration: 6,
-        motionPath: {
-          path: "#path4",
-          align: "#path4",
-          autoRotate: true,
-          alignOrigin: [0.5, 0.5],
-        },
-      });
+      // gsap.to("#mail1", {
+      //   duration: 5,
+      //   yoyo: true,
+      //   ease: "power1.inOut",
+      //   repeat: -1,
+      //   opacity: 1,
+      //   motionPath: {
+      //     path: "#path1",
+      //     align: "#path1",
+      //     autoRotate: true,
+      //     alignOrigin: [0.5, 0.5],
+      //     type: "cubic",
+      //   },
+      // });
+
+      // gsap.to("#mail2", {
+      //   duration: 6,
+      //   yoyo: true,
+      //   ease: "power1.inOut",
+      //   repeat: -1,
+      //   repeatDelay: 2,
+      //   opacity: 1,
+      //   motionPath: {
+      //     path: "#path2",
+      //     align: "#path2",
+      //     autoRotate: true,
+      //     alignOrigin: [0.5, 0.5],
+      //   },
+      // });
+
+      // gsap.to("#mail3", {
+      //   duration: 6,
+      //   yoyo: true,
+      //   ease: "power1.inOut",
+      //   repeat: -1,
+      //   repeatDelay: 3,
+      //   opacity: 1,
+      //   motionPath: {
+      //     path: "#path3",
+      //     align: "#path3",
+      //     autoRotate: true,
+      //     alignOrigin: [0.5, 0.5],
+      //   },
+      // });
+
+      // gsap.to("#mail4", {
+      //   duration: 6,
+      //   yoyo: true,
+      //   ease: "power1.inOut",
+      //   repeat: -1,
+      //   repeatDelay: 1,
+      //   opacity: 1,
+      //   motionPath: {
+      //     path: "#path4",
+      //     align: "#path4",
+      //     autoRotate: true,
+      //     alignOrigin: [0.5, 0.5],
+      //   },
+      // });
     </script>
   </body>
 </html>
