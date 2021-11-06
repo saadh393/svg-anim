@@ -1,0 +1,11 @@
+{
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "liveServer.settings.port": 5501,
+  "prettier.printWidth": 300
+}

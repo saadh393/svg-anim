@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+
+    <title>Link3</title>
+
+    <style>
+      #mail1,
+      #mail2,
+      #mail3,
+      #mail4 {
+        width: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/mail1.png" width="45px" alt="" id="mail1" />
+    <img src="./img/mail2.png" width="45px" alt="" id="mail2" />
+    <img src="./img/mail3.png" width="45px" alt="" id="mail3" />
+    <img src="./img/mail4.png" width="45px" alt="" id="mail4" />
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1263.44 1129.73" width="350px">
+      <defs>
+        <style>
+          #path1,
+          #path2,
+          #path3,
+          #path4 {
+            fill: none;
+            stroke: #2e2e46;
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            stroke-dasharray: 12;
+          }
+        </style>
+      </defs>
+
+      <g id="Layer_2-2" data-name="Layer 2">
+        <!-- Left Bottom -->
+        <path id="path1" d="M515.42,337.55c-26.63-23.07-95.12-69.15-210.53-60.84C152,287.71,39.65,381.39,11.63,532.53s39.89,219,92.89,237.05c49.11,16.69,134.33-2.49,97.7-100.07-34.88-92.89-140.46-17.16-180.83,52.31-70.84,121.91,34.14,445.71,533.08,301.23" transform="translate(0)" />
+
+        <!-- Left Top -->
+        <path id="path2" d="M508.59,228.19S437.45-47.94,195.38,9.31C49.29,80,129.59,225,236.48,166.41,319.62,112.55,197.29,3.54,109.7,14.07,38.31,25.27-7.89,122.94,11.58,227.53c12.2,63.15,126.38,85.31,151.16,93.3s76.69,21.2,51.27,96c-10.29,69.5,50.22,175.51,164.43,155.79" />
+
+        <!-- Right Top -->
+        <path id="path3" d="M569.9,223.19s13.48-94,175.2-131.78c103-24.09,224.49,25.85,242.35,110.92,0,0,39.72,96.38,76.63,125.84,33.83,27,115,63.62,171.88,28.65s8.58-100.53-32.38-109.49-111.19,3.28-146.69,105.57c0,0-13.23,57.13,3.11,93.59s26.7,106.47,4,142.86S1012.67,664,957.78,665.41" />
+
+        <!-- Right Bottom -->
+        <path id="path4" d="M678.4,239.27s283.83,2.75,439.5,259.5c97.48,160.52,49.65,310.76-17.3,329.86s-69-35-48.72-59,116.39-11.93,149.89,103.76c41.36,149.8-141.35,301.51-299.76,241.32-153.65-43.37-204.49-189.65-204.49-189.65" transform="translate(0)" />
+        <image href="./img/world.png" width="50%" style="object-fit: contain; transform: translate(23%, 40%)"></image>
+        <image href="./img/person.png" id="person" width="40%" style="object-fit: contain; transform: translate(30%, 0%)"></image>
+      </g>
+    </svg>
+    <script>
+      gsap.registerPlugin(MotionPathPlugin);
+
+      gsap.to("#person", {
+        duration: 1,
+        y: "60px",
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut",
+      });
+
+      gsap.to("#mail1", {
+        duration: 5,
+        yoyo: true,
+        ease: "power1.inOut",
+        repeat: -1,
+        motionPath: {
+          path: "#path1",
+          align: "#path1",
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+          type: "cubic",
+        },
+      });
+
+      gsap.to("#mail2", {
+        duration: 6,
+        motionPath: {
+          path: "#path2",
+          align: "#path2",
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+      });
+
+      gsap.to("#mail3", {
+        duration: 6,
+        motionPath: {
+          path: "#path3",
+          align: "#path3",
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+      });
+
+      gsap.to("#mail4", {
+        duration: 6,
+        motionPath: {
+          path: "#path4",
+          align: "#path4",
+          autoRotate: true,
+          alignOrigin: [0.5, 0.5],
+        },
+      });
+    </script>
+  </body>
+</html>
